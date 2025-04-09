@@ -1231,6 +1231,87 @@ function RedzLib:AddWindow(co)
             end
             return ParaFunc
         end
+        function Fe:AddInput(cfi)
+            cfi = cfi or {}
+            cfi.Title = cfi.Title or "Input"
+            cfi.PlaceHolderText = cfi.PlaceHolderText or "Input here"
+            cfi.Default = cfi.Default or ""
+            cfi.Callback = cfi.Callback or function() end
+
+            local Input = Instance.new("Frame")
+            local UICorner_22 = Instance.new("UICorner")
+            local UIStroke_13 = Instance.new("UIStroke")
+            local Title_7 = Instance.new("TextLabel")
+            local UIPadding_11 = Instance.new("UIPadding")
+            local InputFrame = Instance.new("Frame")
+            local UICorner_23 = Instance.new("UICorner")
+            local UIStroke_14 = Instance.new("UIStroke")
+            local RealInput = Instance.new("TextBox")
+
+            Input.Name = "Input"
+            Input.Parent = ChannelReal
+            Input.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+            Input.BackgroundTransparency = 0.120
+            Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            Input.BorderSizePixel = 0
+            Input.Size = UDim2.new(1, 0, 0, 30)
+            
+            UICorner_22.CornerRadius = UDim.new(0, 5)
+            UICorner_22.Parent = Input
+            
+            UIStroke_13.Parent = Input
+            UIStroke_13.Color = Color3.fromRGB(40, 40, 40)
+            UIStroke_13.Transparency = 0.350
+            
+            Title_7.Name = "Title"
+            Title_7.Parent = Input
+            Title_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Title_7.BackgroundTransparency = 1.000
+            Title_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            Title_7.BorderSizePixel = 0
+            Title_7.Size = UDim2.new(1, -130, 1, 0)
+            Title_7.Font = Enum.Font.GothamBold
+            Title_7.Text = cfi.Title
+            Title_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Title_7.TextSize = 11.000
+            Title_7.TextXAlignment = Enum.TextXAlignment.Left
+            
+            UIPadding_11.Parent = Title_7
+            UIPadding_11.PaddingLeft = UDim.new(0, 7)
+            
+            InputFrame.Name = "InputFrame"
+            InputFrame.Parent = Input
+            InputFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+            InputFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            InputFrame.BorderSizePixel = 0
+            InputFrame.Position = UDim2.new(1, -120, 0, 5)
+            InputFrame.Size = UDim2.new(0, 110, 0, 20)
+            
+            UICorner_23.CornerRadius = UDim.new(0, 5)
+            UICorner_23.Parent = InputFrame
+            
+            UIStroke_14.Parent = InputFrame
+            UIStroke_14.Color = Color3.fromRGB(144, 144, 144)
+            UIStroke_14.Transparency = 0.670
+            
+            RealInput.Name = "RealInput"
+            RealInput.Parent = InputFrame
+            RealInput.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            RealInput.BackgroundTransparency = 1.000
+            RealInput.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            RealInput.BorderSizePixel = 0
+            RealInput.ClipsDescendants = true
+            RealInput.Size = UDim2.new(1, 0, 1, 0)
+            RealInput.ClearTextOnFocus = false
+            RealInput.Font = Enum.Font.GothamBold
+            RealInput.PlaceholderText = cfi.PlaceHolderText
+            RealInput.Text = cfi.Default
+            RealInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+            RealInput.TextSize = 13.000
+            RealInput.FocusLost:Connect(function()
+                cfi.Callback(RealInput.Text)
+            end)
+        end
         return Fe
     end
     return Tab
