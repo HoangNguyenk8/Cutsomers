@@ -393,7 +393,7 @@ function Lib:Window()
         end)
         Counts = Counts + 1
         local Fe = {}
-        function Fe:AddStatus(status, desc)
+        function Fe:AddStatus(status, desc, icon)
             local StatusLod = Instance.new("Frame")
             local UICorner_3 = Instance.new("UICorner")
             local UIStroke_2 = Instance.new("UIStroke")
@@ -428,7 +428,7 @@ function Lib:Window()
             Icon_3.BorderSizePixel = 0
             Icon_3.Position = UDim2.new(0, 5, 0, 5)
             Icon_3.Size = UDim2.new(0, 32, 0, 32)
-            Icon_3.Image = "http://www.roblox.com/asset/?id=109931451264820"
+            Icon_3.Image = icon
             
             UICorner_4.CornerRadius = UDim.new(1, 0)
             UICorner_4.Parent = Icon_3
