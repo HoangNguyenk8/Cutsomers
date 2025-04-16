@@ -68,6 +68,7 @@ function Lib:Window()
     local UIListLayout_3 = Instance.new("UIListLayout")
     local LogoConcat = Instance.new("Frame")
     local Logoed = Instance.new("ImageLabel")
+    local Nigga2 = Instance.new("UICorner")
     local Nigga = Instance.new("UICorner")
     local Ngu2 = Instance.new("UIStroke")
     local Clicking = Instance.new("TextButton")
@@ -96,6 +97,10 @@ function Lib:Window()
     Nigga.CornerRadius = UDim.new(0, 6)
     Nigga.Name = "Nigga"
     Nigga.Parent = Logoed
+
+    Nigga2.CornerRadius = UDim.new(0, 6)
+    Nigga2.Name = "Nigga2"
+    Nigga2.Parent = LogoConcat
 
     Ngu2.Name = "Ngu"
     Ngu2.Parent = Logoed
