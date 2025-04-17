@@ -579,6 +579,14 @@ function Lib:Window()
             HATSUIZZ.Text = ""
             HATSUIZZ.TextColor3 = Color3.fromRGB(0, 0, 0)
             HATSUIZZ.TextSize = 14.000
+            HATSUIZZ.Activated:Connect(function()
+                game:GetService("StarterGui"):SetCore("SendNotification",{
+                    Title = "DISCORD LINK",
+                    Text = "Link discord copyed!",
+                    Duration = 8
+                })
+                setclipboard('https://discord.gg/SnVQe7gx')
+            end)
         end
         return Fe
     end
